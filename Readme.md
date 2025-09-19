@@ -68,7 +68,7 @@ This system allows office employees to book rooms, update or cancel bookings, an
 
 ## ⚙ Setup
 
-### Backend Setup
+** Backend Setup **
 
 1. Navigate to the backend folder:
 
@@ -92,7 +92,9 @@ Copy code
 npm run dev
 The backend server will run on http://localhost:5000.
 
-Frontend Setup
+
+** frontend Setup **
+
 Navigate to the frontend folder:
 
 bash
