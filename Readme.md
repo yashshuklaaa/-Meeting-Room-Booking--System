@@ -65,83 +65,83 @@ This system allows office employees to book rooms, update or cancel bookings, an
 ## 🗂 Project Structure
 
 
-
 ## ⚙ Setup
 
-** Backend Setup **
+### Backend Setup
 
 1. Navigate to the backend folder:
 
 ```bash
 cd backend
-Install dependencies:
+```
 
-bash
-Copy code
+2. Install dependencies:
+
+```bash
 npm install
-Create a .env file with the following content:
+```
 
-ini
-Copy code
+3. Create a `.env` file with the following content:
+
+```ini
 MONGO_URI=<Your MongoDB connection string>
 PORT=5000
-Start the backend server:
+```
 
-bash
-Copy code
+4. Start the backend server:
+
+```bash
 npm run dev
-The backend server will run on http://localhost:5000.
+```
 
-
-** frontend Setup **
-
-Navigate to the frontend folder:
-
-bash
-Copy code
-cd frontend
-Install dependencies:
-
-bash
-Copy code
-npm install
-Start the Vite development server:
-
-bash
-Copy code
-npm run dev
+The backend server will run on [http://localhost:5000](http://localhost:5000).
 
 ---
 
-🔗 API Endpoints
-Rooms
-GET /api/rooms — Get all rooms.
+### Frontend Setup
 
-Bookings
-GET /api/bookings?start=YYYY-MM-DD&end=YYYY-MM-DD — Get bookings within date range.
+1. Navigate to the frontend folder:
 
-POST /api/bookings — Create a booking.
+```bash
+cd frontend
+```
 
-PUT /api/bookings/:id — Update a booking.
+2. Install dependencies:
 
-DELETE /api/bookings/:id?scope=all|future|instance&instanceDate=YYYY-MM-DD — Delete booking(s) based on scope.
+```bash
+npm install
+```
 
-💻 Frontend Usage
-RoomSelector: Select the room globally.
+3. Start the Vite development server:
 
-SlotGrid: Shows available (green) and booked (red) slots.
+```bash
+npm run dev
+```
 
-BookingForm: Create or update bookings. Automatically pre-fills when a slot is clicked.
+The frontend will run on [http://localhost:5173](http://localhost:5173) (or the port Vite shows in the terminal).
 
-BookingsList: Displays all bookings and allows deletion/updating.
+---
 
+## 🔗 API Endpoints
 
+**Rooms**  
+- `GET /api/rooms` — Get all rooms.
 
+**Bookings**  
+- `GET /api/bookings?start=YYYY-MM-DD&end=YYYY-MM-DD` — Get bookings within a date range.  
+- `POST /api/bookings` — Create a booking.  
+- `PUT /api/bookings/:id` — Update a booking.  
+- `DELETE /api/bookings/:id?scope=all|future|instance&instanceDate=YYYY-MM-DD` — Delete booking(s) based on scope.
 
+---
 
-Recurring booking rules use RRULE format (FREQ=WEEKLY;COUNT=10).
+## 💻 Frontend Usage
 
-✅ Conclusion
-This project fully implements the task described:
+- **RoomSelector**: Select the room globally.  
+- **SlotGrid**: Shows available (green) and booked (red) slots.  
+- **BookingForm**: Create or update bookings. Automatically pre-fills when a slot is clicked.  
+- **BookingsList**: Displays all bookings and allows deletion/updating.  
 
-"Build a Meeting Room Booking System with MongoDB, Node.js + Express, React. Must handle double-booking, cancellations, updates, optional recurring bookings, and show slots per room.
+Recurring booking rules use RRULE format (e.g., `FREQ=WEEKLY;COUNT=10`).
+
+---
