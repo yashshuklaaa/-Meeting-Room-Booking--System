@@ -32,14 +32,14 @@ export default function BookingsList({ bookings, fetchBookings }) {
               <div className="text-xs">Room: {b.roomName}</div>
             </div>
             <div className="flex gap-2">
-              <button onClick={()=>setEditing(b)} className="px-2 py-1 bg-yellow-500 text-white rounded">Edit</button>
-              <button onClick={()=>handleDelete(b)} className="px-2 py-1 bg-red-500 text-white rounded">Delete</button>
+              <button onClick={() => setEditing(b)} className="px-2 py-1 bg-yellow-500 text-white rounded">Edit</button>
+              <button onClick={() => handleDelete(b)} className="px-2 py-1 bg-red-500 text-white rounded">Delete</button>
             </div>
           </li>
         ))}
       </ul>
 
-      {editing && <EditBookingModal booking={editing} onClose={()=>setEditing(null)} fetchBookings={fetchBookings} />}
+      {editing && <EditBookingModal booking={editing} onClose={() => setEditing(null)} fetchBookings={fetchBookings} />}
     </div>
   )
 }
