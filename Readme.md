@@ -1,5 +1,31 @@
 # Meeting Room Booking System
 
+📝 Task Implementation Summary
+Schemas: Designed Room and Booking schemas in MongoDB.
+
+Conflict Handling: Backend checks for overlapping bookings.
+
+Recurring Bookings: Optional, supports cancelling single instance, future instances, or entire series.
+
+Frontend Logic:
+
+Room selection is global.
+
+Clicking a slot pre-fills the booking form.
+
+Updates and deletions reflect immediately.
+
+Rules Followed:
+
+No overlapping bookings.
+
+Slots freed after cancellation.
+
+Modular, clean code structure.
+
+Styling: Basic Tailwind CSS applied. Can be improved.
+
+
 A web-based **Meeting Room Booking System** built with **MongoDB, Node.js, Express, and React (Vite)**.  
 This system allows office employees to book rooms, update or cancel bookings, and optionally handle recurring meetings. The application prevents double-booking and keeps bookings consistent across rooms.
 
@@ -30,58 +56,33 @@ This system allows office employees to book rooms, update or cancel bookings, an
 
 ## 🗂 Project Structure
 
-backend/
-├─ config/db.js # MongoDB connection
-├─ controllers/
-│ ├─ bookingController.js # CRUD and recurring logic
-│ └─ roomController.js # Fetch and seed rooms
-├─ models/
-│ ├─ Booking.js # Booking schema
-│ └─ Room.js # Room schema
-├─ routes/
-│ ├─ bookingRoutes.js
-│ └─ roomRoutes.js
-├─ server.js # Entry point
-frontend/
-├─ src/
-│ ├─ api/api.js # Axios instance
-│ ├─ components/
-│ │ ├─ BookingForm.jsx
-│ │ ├─ BookingsList.jsx
-│ │ ├─ RoomSelector.jsx
-│ │ └─ SlotGrid.jsx
-│ └─ App.jsx
-├─ index.html
-└─ package.json
 
-yaml
-Copy code
 
----
+## ⚙Setup
 
-## ⚙ Backend Setup
+1. Navigate to the folder:
 
-1. Navigate to the backend folder:
+⚙ Backend Setup
 
 ```bash
 cd backend
 Install dependencies:
 
 bash
-Copy code
+
 npm install
 Create .env file:
 
 ini
-Copy code
 MONGO_URI=<Your MongoDB connection string>
 PORT=5000
 Start the server:
 
 bash
-Copy code
+
 npm run dev
 The server runs on http://localhost:5000.
+
 
 ⚙ Frontend Setup
 Navigate to the frontend folder:
@@ -123,35 +124,9 @@ BookingForm: Create or update bookings. Automatically pre-fills when a slot is c
 
 BookingsList: Displays all bookings and allows deletion/updating.
 
-📝 Task Implementation Summary
-Schemas: Designed Room and Booking schemas in MongoDB.
 
-Conflict Handling: Backend checks for overlapping bookings.
 
-Recurring Bookings: Optional, supports cancelling single instance, future instances, or entire series.
 
-Frontend Logic:
-
-Room selection is global.
-
-Clicking a slot pre-fills the booking form.
-
-Updates and deletions reflect immediately.
-
-Rules Followed:
-
-No overlapping bookings.
-
-Slots freed after cancellation.
-
-Modular, clean code structure.
-
-Styling: Basic Tailwind CSS applied. Can be improved.
-
-📌 Notes
-Login/Signup not required per task requirements.
-
-You can enhance styling or integrate calendar libraries for better UX.
 
 Recurring booking rules use RRULE format (FREQ=WEEKLY;COUNT=10).
 
